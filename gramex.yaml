@@ -1,0 +1,65 @@
+import:
+  ui:
+    path: $GRAMEXAPPS/ui/gramex.yaml
+    YAMLURL: $YAMLURL/ui/
+
+url:
+  docexplore:
+    pattern: /$YAMLURL/
+    handler: FileHandler
+    kwargs:
+      path: upload.html
+      template: true
+      transform:
+        "*.html": 
+          function: template
+  
+  insights:
+    pattern: /$YAMLURL/insights
+    handler: FileHandler
+    kwargs:
+      path: templates/insights.tmpl.html
+      template: true
+  
+  progress:
+    pattern: /$YAMLURL/progress
+    handler: filehandler.ProgressHandler
+  
+  process-pdf:
+    pattern: /$YAMLURL/process-pdf
+    handler: filehandler.PDFProcessHandler
+    kwargs:
+      path: uploads/
+  
+  process-json:
+    pattern: /$YAMLURL/process-json
+    handler: filehandler.JSONProcessHandler
+    kwargs:
+      path: uploads/
+  
+  uploads:
+    pattern: /$YAMLURL/uploads/(.*)
+    handler: FileHandler
+    kwargs:
+      path: uploads/
+      transform:
+        "*.json":
+          function: template
+
+  node-modules:
+    pattern: /$YAMLURL/node_modules/(.*)
+    handler: FileHandler
+    kwargs:
+      path: node_modules/
+
+  assets:
+    pattern: /$YAMLURL/(.+\.(js|css|png|jpg|gif|svg|eot|ttf|woff|woff2))
+    handler: FileHandler
+    kwargs:
+      path: .
+
+watch:
+  paths:
+    - "*.py"
+    - "*.yaml"
+    - "*.html"

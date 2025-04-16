@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% set json_file = handler.get_argument('json', '') %}
+{% set title = 'Document Insights' %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="../node_modules/@gramex/insighttree/dist/insighttree.css" rel="stylesheet" />
+  <link href="../style.css" rel="stylesheet" />
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" type="module"></script>
+  <script src="../node_modules/@gramex/ui/dist/dark-theme.js" type="module"></script>
+  <script src="../node_modules/scrollama/build/scrollama.min.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">{{ title }}</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <input type="range" class="form-range me-3" value="0.50" min="0.40" max="0.95" step="0.001" id="min-similarity" data-bs-toggle="tooltip" title="Minimum similarity to match" data-bs-placement="bottom" />
+        <div class="nav-item dropdown ms-auto" role="group" aria-label="Toggle dark mode" title="Toggle Dark Mode">
+          <button class="dark-theme-toggle btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle theme (auto)">
+            <i class="bi bi-circle-half"></i> <span class="d-lg-none ms-2">Toggle theme</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><button class="dropdown-item" data-bs-theme-value="light"><i class="me-2 bi bi-sun-fill"></i> Light</button></li>
+            <li><button class="dropdown-item" data-bs-theme-value="dark"><i class="me-2 bi bi-moon-stars-fill"></i> Dark</button></li>
+            <li><button class="dropdown-item" data-bs-theme-value="auto"><i class="me-2 bi bi-circle-half"></i> Auto</button></li>
+          </ul>
+        </div>
+        <a href="/" class="btn btn-sm btn-outline-light ms-2" title="Back to Upload">
+          <i class="bi bi-arrow-left"></i> Upload
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1 class="display-1 my-5 text-center">{{ title }}</h1>
+
+    {% if not json_file %}
+      <div class="alert alert-danger text-center h4 fw-normal">No file specified.</div>
+      <p class="text-center my-5">
+        <a class="btn btn-primary" href="/">Go to upload page</a>
+      </p>
+    {% else %}
+      <div class="col-12 col-sm-9 col-md-6 col-lg-4 mx-auto">
+        <p>Explore your document insights by scrolling through the story below.</p>
+      </div>
+      <section id="scrolly" class="row position-relative py-3">
+        <article class="steps col-6 col-lg-4"></article>
+        <figure class="col-6 col-lg-8 position-sticky figure-panel">
+          <div id="panel-topics" data-panel="topics"></div>
+          <div id="panel-text" data-panel="text"></div>
+          <div id="panel-network" data-panel="network">
+            <svg id="doc-network" class="w-100 vh-100" viewBox="0 0 600 600"></svg>
+          </div>
+        </figure>
+      </section>
+
+      <footer class="my-5 vh-100 d-flex align-items-center justify-content-center">
+        <h1 class="display-4">Designed by <a href="https://gramener.com/" class="text-reset link-offset-3 link-underline link-underline-opacity-25">Gramener</a></h1>
+      </footer>
+
+      <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"></div>
+          </div>
+        </div>
+      </div>
+      <script type="module">
+        window.dataLink = "/uploads/{{ json_file }}";
+        window.charsPerPixel = 20;
+      </script>
+      <script type="module" src="../story.js"></script>
+    {% end %}
+  </div>
+</body>
+
+</html> 

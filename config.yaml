@@ -1,0 +1,222 @@
+demos:
+  medical-reviews:
+    client: Straive
+    title: Medical Reviews
+    body: Explore the findings from the California Independent Medical Review Dataset under Cardiac/circulatory.
+    description: |
+      This data is from the California Department of Managed Health Care (DMHC). It contains all decisions from Independent Medical Reviews (IMR) administered by the DMHC since January 1, 2001.
+      An IMR is an independent review of a denied, delayed, or modified health care service that the health plan has determined to be not medically necessary, experimental/investigational or non-emergent/urgent.
+      If the IMR is decided in an enrollee's favor, the health plan must authorize the service or treatment requested.
+
+      Download the data from [California Independent Medical Review Dataset](https://www.kaggle.com/datasets/prasad22/ca-independent-medical-review).
+
+      Here, we categorize the findings from the reviews under the Cardiac/Circulatory category.
+    similarity: 0.5
+    min-similarity: 0.4
+    max-similarity: 1
+    charsPerPixel: 40
+  itsr:
+    client: Straive
+    title: IT Service Requests
+    body: This app summarizes and categorizes the service requests received by an IT support team in May 2024.
+    description: |
+      This app summarizes and categorizes the service requests received by an IT support team in May 2024.
+
+      The underlying dataset blah blah
+    similarity: 0.6
+    min-similarity: 0.4
+    max-similarity: 0.7
+    charsPerPixel: 15
+  green-street:
+    client: Green-Street
+    title: Green Street Advisors
+    body: This is an application that summarizes sample market reports and insights of Green Street Advisors.
+    description: This is an application that summarizes sample market reports and insights of Green Street Advisors.
+    similarity: 0.3
+    min-similarity: 0.2
+    max-similarity: 0.6
+    charsPerPixel: 15
+  pearson-assessment:
+    client: Straive
+    title: Pearson Assessments
+    body: Explore guides for teachers on how to build effective student interactions, and instructional strategies.
+    description: |
+      Doc-Explorer is an application that visually represents the most discussed topics and sub-topics within the provided content or documents.
+
+      Blue Circles: Represent document names.
+      Grey Circles: Indicate sections of the document.
+      Grey Rectangles: Highlight text or paragraphs within those sections.
+
+      Click on any topic or sub-topic to see it highlighted in the grey rectangles. Hover over the rectangles to read the content in detail.
+
+      Explore guides for teachers on how to build effective student interactions, and instructional strategies. The following insights and correlations were derived from a collection of 63 studies, guides and reports for K-12 disciplines and subject areas.
+      The viewer can see how the data is expanded or contracted based on the "Similarity Slider" at the top of the browser window.
+
+    similarity: 0.5
+    min-similarity: 0.3
+    max-similarity: 0.7
+    charsPerPixel: 10
+    domains: [gramener.com, straive.com, pearson.com]
+  artofwar:
+    client: Gramener
+    title: The Art of War
+    body: This data story explores the topics covered in Sun Tzu's The Art of War ranging from Leadership & Command to Intellectual Approaches.
+    link: https://gramener.com/gramex-docexplore/artofwar/
+  llmpapers:
+    client: Straive
+    title: LLM Papers
+    body: An analysis of the the topics covered in large language model (LLM) papers published on arxiv.org since its inception.
+    link: https://gramener.com/gramex-docexplore/llmpapers/
+  biomolecule-papers:
+    client: Straive
+    title: Biomolecule Papers
+    body: An analysis of the the topics covered in biomolecule papers published on arxiv.org since its inception.
+    description: |
+      In this data story, we explore the abstracts of papers related to [biomolecule - `q-bio.BM`](https://arxiv.org/list/q-bio.BM/new) papers published on [arxiv.org](https://arxiv.org/) since its inception.
+
+      The metadata is sourced from [Cornell's Kaggle arxiv dataset](https://www.kaggle.com/datasets/Cornell-University/arxiv/) which lists almost 1 million papers.
+
+      We then used ChatGPT to **automatically** identify topics and cluster them.
+
+      This visual explores which topic was mentioned where in the document.
+    similarity: 0.50
+    min-similarity: 0.40
+    max-similarity: 0.60
+    charsPerPixel: 100
+  credit-card-complaints:
+    client: Visa
+    title: Credit Card Complaints
+    body: Explore 4,000 consumer complaints about credit cards to understand patterns of issues.
+    description: |
+      In this data story, we explore 4,000 consumer complaints about credit cards to understand patterns of issues.
+
+      The data is sourced from the [Consumer Financial Protection Bureau](https://www.consumerfinance.gov/data-research/consumer-complaints/) and covers complaints from 2011 to 2024.
+
+      We then used ChatGPT to **automatically** map each complaint to the CFPB taxonomy to identify which topic each complaint was most related to.
+
+      This visual explores which topic was mentioned where in the document.
+    similarity: 0.53
+    min-similarity: 0.40
+    max-similarity: 0.60
+    charsPerPixel: 100
+  waste-management:
+    client: Covanta
+    title: Website messages
+    body: An analysis of the messages received at a waste management company's website.
+    domains: [gramener.com, straive.com]
+    similarity: 0.85
+    charsPerPixel: 20
+  sustainability-energy:
+    client: MSCI
+    title: Global O&G Reporting Themes
+    body: Explore the sustainability themes covered by oil & gas companies like BP, CNPC, ExxonMobil, Shell, etc.
+    similarity: 0.85
+    charsPerPixel: 30
+  sustainability-pharma:
+    client: MSCI
+    title: Pharma Sustainanability Reports
+    body: Explore the sustainability themes covered by pharma companies like Eli Lilly, J&J, Novartis, Pfizer, etc.
+    similarity: 0.83
+    charsPerPixel: 30
+  journal-abstracts:
+    client: Straive
+    title: Journal Abstracts
+    body: An exploration of the topics covered in a set of chemical paper abstracts.
+    link: https://gramener.com/gramex-docexplore/journal-abstracts/
+  gpai:
+    client: BMGF
+    title: GPAI Abstracts
+    body: Explore the abstracts submitted to the GPAI Summit 2023 Research Symposium, and which AI topics they addressed the most.
+    link: https://gramener.com/gramex-docexplore/gpai/
+  gpai-pre:
+    client: BMGF
+    title: Pre-GPAI Abstracts
+    body: Explore the abstracts submitted BEFORE the GPAI Summit 2023 Research Symposium, and which AI topics they addressed the most.
+    similarity: 0.815
+    domains: ["gramener.com", "straive.com", "gatesfoundation.org", "cerai.in", "wadhwaniai.org", "digitalindia.gov.in"]
+  gpai-post:
+    client: BMGF
+    title: Post-GPAI Abstracts
+    body: Explore the abstracts submitted AFTER the GPAI Summit 2023 Research Symposium, and which AI topics they addressed the most.
+    similarity: 0.835
+    domains: ["gramener.com", "straive.com", "gatesfoundation.org", "cerai.in", "wadhwaniai.org", "digitalindia.gov.in"]
+  g20:
+    client: BMGF
+    title: G20 Themes
+    body: Explore topics discussed in the G20 2023 summit, and which of the G20 Presidency goals they addressed the most.
+    link: https://gramener.com/g20/
+  vara:
+    client: Dubai Tourism
+    title: VARA Rulebook
+    body: Technology and Information Rulebook of the Dubai Virtual Assets and Related Activities Regulations 2023 (VARA).
+    similarity: 0.62
+    min-similarity: 0.40
+    max-similarity: 0.65
+    charsPerPixel: 10
+  party-esg-topics:
+    client: Gramener
+    title: Party Manifesto ESG topics
+    body: Explore the policies proposed on climate risk, climate change and sustainability from political parties manifestos since 2004.
+    description: |
+      It is interesting to know the kind of policies and reforms proposed over the years around climate risk, climate change and sustainability.
+
+      To explore this, we analysed Political parties manifestos from as far back as 2004 to gather key insights around which parties capture messaging around Climate and Sustainability, and how frequently.
+    similarity: 0.45
+    min-similarity: 0.40
+    max-similarity: 0.60
+    charsPerPixel: 50
+  author-feedback:
+    client: Elsevier
+    title: Author Feedback
+    body: Explores the topics covered by feedback from authors to book publishers about the publishing process.
+    domains: [gramener.com, straive.com, elsevier.com]
+    similarity: 0.85
+    charsPerPixel: 20
+  impact-report:
+    client: Rivian
+    title: Impact Report (Customers)
+    body: Explores Rivian's first Impact Report covering initiatives and accomplishments in 2022.
+    similarity: 0.85
+    charsPerPixel: 8
+  impact-report-investor:
+    client: Rivian
+    title: Impact Report (Investors)
+    body: Explores Rivian's first Impact Report covering initiatives and accomplishments in 2022.
+    similarity: 0.85
+    charsPerPixel: 8
+  straive-enps:
+    client: Straive
+    title: Straive ENPS
+    body: Feedback from Straive employee survey on what's positive and what can be improved.
+    domains: [gramener.com, straive.com]
+    similarity: 0.88
+    charsPerPixel: 5
+  publisher-feedback:
+    client: Elsevier
+    title: Publisher feedback
+    body: Suggestions from customers to publisher on what corrective and preventive action is required.
+    domains: [gramener.com, straive.com, elsevier.com]
+    similarity: 0.85
+    charsPerPixel: 1
+  salesforce-crm:
+    client: Neuberger Berman
+    title: CRM Messages
+    body: Explore the open CRM cases and identify the main topics of discussion.
+    domains: [gramener.com, straive.com]
+    similarity: 0.80
+    charsPerPixel: 40
+  sdg:
+    client: Springer Nature
+    title: SDG Goals
+    body: See which UN sustainability goals are mentioned more often in scientific papers and which co-occur.
+    similarity: 0.75
+    charsPerPixel: 15
+  conde-nast:
+    client: Gramener
+    title: Condé Nast Digitized Magazines
+    body: Explore content from old digitized magaines.
+    domains: [gramener.com, straive.com]
+    similarity: 0.35
+    min-similarity: 0.30
+    max-similarity: 0.50
+    charsPerPixel: 20

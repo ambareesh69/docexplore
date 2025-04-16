@@ -1,0 +1,10 @@
+# Ignore secrets
+.secrets*
+
+# Ignore generated files
+__pycache__/
+node_modules/
+docexplore311/
+
+# Ignore tool configuration files
+.vscode/

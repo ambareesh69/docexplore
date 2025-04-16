@@ -1,0 +1,18 @@
+validate:
+  image: gramener/builderrors
+  script: builderrors
+
+deploy:
+  stage: deploy
+  script:
+    - secrets DOCEXPLORE_* > .secrets.yaml
+    - deploy
+  variables:
+    SERVER: ubuntu@gramener.com
+    URL: docexplore
+    SETUP: gramex setup .
+    VERSION: py3v11
+    PORT: 8050
+  environment:
+    name: production
+    url: https://gramener.com/docexplore/

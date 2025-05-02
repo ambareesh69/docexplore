@@ -81,7 +81,6 @@ The DocExplore project consists of the following files and directories:
 ### Other Files
 - **default.tmpl.html**: Default template for HTML pages
 - **emailauth.template.html**: Template for email authentication
-- **.DS_Store**: macOS directory attributes file (should be ignored)
 
 ## Predefined Variables
 
